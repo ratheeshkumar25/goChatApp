@@ -113,7 +113,7 @@ func (h *Handler) MessagesHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	// Get messages with timeout (10 seconds)
-	messages, ok := client.GetMessages(10 * time.Second)
+	messages, ok := client.GetMessages(10 * time.Minute)
 	if !ok {
 		http.Error(w, "Client disconnected", http.StatusGone)
 		return

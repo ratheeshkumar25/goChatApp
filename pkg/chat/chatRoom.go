@@ -96,7 +96,7 @@ func (c *ChatRoom) broadcastMessage(msg Message) {
 		// Use a non-blocking send to prevent one slow client from blocking others
 		select {
 		case client.MsgChan <- msg:
-			// Message sent successfully
+			// Message sent successfully to message channel
 		default:
 			// Client's channel buffer is full, log and continue
 			fmt.Printf("Failed to send message to client %s: channel full\n", client.ID)

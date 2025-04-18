@@ -37,7 +37,7 @@ func (c *Client) GetMessages(timeout time.Duration) ([]Message, bool) {
 		return messages, true // Timeout with no messages
 	}
 
-	// Collect any remaining messages without blocking
+	//Collect any remaining messages without blocking
 drainLoop:
 	for {
 		select {

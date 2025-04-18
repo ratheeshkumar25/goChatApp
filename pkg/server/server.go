@@ -28,4 +28,5 @@ func (s *Server) setupRoutes() {
 	s.Router.HandleFunc("/leave", s.Handler.LeaveHandler).Methods("GET")
 	s.Router.HandleFunc("/send", s.Handler.SendHandler).Methods("GET")
 	s.Router.HandleFunc("/messages", s.Handler.MessagesHandler).Methods("GET")
+
 }
